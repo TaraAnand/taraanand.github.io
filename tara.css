@@ -21,7 +21,7 @@ p{
 }
 
 h1{
-	font-family:'Alegreya Sans SC', sans-serif;
+	font-family:'Alegreya Sans SC', 'Alegreya Sans', sans-serif;
 	line-height: 1.5;
 	font-size: 40px;
 	text-align: left;
@@ -29,7 +29,7 @@ h1{
 }
 
 h2{
-	font-family:'Alegreya Sans SC', sans-serif;
+	font-family:'Alegreya Sans SC', 'Alegreya Sans', sans-serif;
 	font-size: 30px;
 	line-height: 1.5;
 	text-align: left;
@@ -80,7 +80,8 @@ h2{
 	background: url('tech.jpg');
 	background-size: 100%;
 	margin: 0 auto;
-	box-shadow: inset 0 0 0 1000px rgba(31, 58, 147, .91);
+    box-shadow: inset 0 0 0 1000px rgba(256, 256, 256, .95);
+	/*box-shadow: inset 0 0 0 1000px rgba(31, 58, 147, .91);*/
 	
 }
 
@@ -88,7 +89,19 @@ h2{
 	background: url('dance.jpg');
 	background-size: 100%;
 	margin: 0 auto;
-	box-shadow: inset 0 0 0 1000px rgba(31, 58, 147, .91);
+	/*box-shadow: inset 0 0 0 1000px rgba(31, 58, 147, .91);*/
+    box-shadow: inset 0 0 0 1000px rgba(256, 256, 256, .91);
+}
+
+#shower{
+    background: url('shower.jpg');
+    background-size: 100%;
+    margin: 0 auto; 
+    box-shadow: inset 0 0 0 1000px rgba(256, 256, 256, .91);
+}
+
+#About{
+    padding-bottom: 10%;
 }
 
 .light p{
@@ -251,7 +264,7 @@ div.right {
     margin-top: 0;
  padding-left:15%;
  padding-right:15%;
- padding-bottom:15%;
+ padding-bottom:35%;
  width: 70%;
     height: auto;  
 }
