@@ -139,10 +139,9 @@ h2{
     color: black;
 }
 
-video{
+iframe{
     display: block;
     margin: 0 auto;
-    width: 80%;
 }
 
 ul{
