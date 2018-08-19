@@ -68,11 +68,11 @@ h2{
 }
 
 .division img{
-	border-radius: 50%;
-	width: 30%;
+	border-radius: 20%;
+	width: 50%;
 	display: block;
-	margin: 0 auto;
-	padding-top: 20px;
+	/*margin: 0 auto;*/
+	/*padding-top: 20px;*/
 	
 }
 
@@ -104,13 +104,7 @@ h2{
     padding-bottom: 10%;
 }
 
-.light p{
-	color:rgb(255,255,255);
-}
 
-.light h1{
-	color:rgb(255,255,255);
-}
 .footer {
 	background-color: rgb(31, 58, 147);
 	margin: 10 auto;
@@ -131,6 +125,55 @@ h2{
 	padding: 4px;
 	margin: 0 auto;
 }
+
+/* Nav Bar */ 
+.navbar{
+    text-align: center;
+    background-color: rgb(230,230,230);
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    font-size: 20px; 
+    font-family:'Alegreya Sans', sans-serif;
+    z-index:1;
+    color: black;
+}
+
+video{
+    display: block;
+    margin: 0 auto;
+    width: 80%;
+}
+
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.navbar a {
+    display: inline-block;
+}
+
+.navbar li{
+    /*display: inline;*/
+    float: left;
+}
+
+.navbar li a {
+    display: block;
+ 
+    text-align: center;
+    padding: 4px 15px;
+    text-decoration: none;
+}
+
+
+
+
+
 
 /* Slider
 ------------------------------------------------------------ */
@@ -264,7 +307,7 @@ div.right {
     margin-top: 0;
  padding-left:15%;
  padding-right:15%;
- padding-bottom:35%;
+ padding-bottom:45%;
  width: 70%;
     height: auto;  
 }
