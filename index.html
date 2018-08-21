@@ -8,7 +8,7 @@
 		<link rel="shortcut icon" href="favicon.png">
 
 		<script src="js/jquery-3.2.1.js"></script>
-    	<script src="js/main.js"></script>
+    	<script src="main.js"></script>
 	</head>
 
 	<body>
@@ -21,14 +21,14 @@
 			<ul>
 				<li><a href = "#top">About</a></li>
 				<li><a href = "#dance">Dance</a></li>
-				<li><a href = "#shower">Projects</a></li>
-				<li><a href = "#sleresearch">Experience</a></li>
+				<li><a href = "#projects">Projects</a></li>
+				<li><a href = "#experience">Experience</a></li>
 				<li><a href = "http://taraanand.github.io/Resume.pdf">Resume</a></li>
 			</ul>
 		</div>
 
 		<div class = "division" id="About">
-			<div class = "sectionHeader">
+			<div class = "subSectionHeader">
 				<h1> About Me</h1>
 			</div>
 			
@@ -39,45 +39,66 @@
  
 		</div>
 
-
+		<!-- Projects Slideshow-->
 		
-
-		<div class = "division" id = "shower"> 
-            <div class = "subSectionHeader">
-                <h1> ShowerThoughts | 2017</h1>
-        	</div>
-
-            <p>Looking for a new Chrome Extension to brighten your day and make you smile? Download <a href = https://chrome.google.com/webstore/detail/showerthoughts/ejfkmkpjcoaifaaplbffococjkhpclgb?hl=en>ShowerThoughts</a>, the brainchild of a team of some sleep-deprived developers at a hackathon, and you'll be presented with some philosophical thoughts with an aesthetic background, every time you open a new tab. </p>
-        </div>
-
-        <div class = "division" id="tech">
-            <div class = "subSectionHeader">
-				<h1> Mapping Historic New Castle |	2016</h1>
+		<div class = "container">
+			<div class = "sectionHeader" id = "projects">
+				<h1> Projects </h1>
 			</div>
+			<div class = "slide" id = "shower"> 
+	            <div class = "subSectionHeader">
+	                <h2> ShowerThoughts | 2017</h2>
+	        	</div>
+	        	
+	            <p>Looking for a new Chrome Extension to brighten your day and make you smile? Download <a href = https://chrome.google.com/webstore/detail/showerthoughts/ejfkmkpjcoaifaaplbffococjkhpclgb?hl=en>ShowerThoughts</a>, the brainchild of a team of some sleep-deprived developers at a hackathon, and you'll be presented with some philosophical thoughts with an aesthetic background, every time you open a new tab. </p>
+	        </div>  <!-- end of slide -->
 
-			<p>While interning with the New Castle Historical Society, I collected and consolidated data on historical landmarks in New Castle, New York. Using this data, I created an <a href = "http://www.newcastlehs.org/historic-new-castle/new-castle-landmarks/interactive-map/">online interactive map</a> , marking over 50 landmarks to increase awareness of local history and the importance of landmark preservation. </br> </p>
-        </div>
+	        <div class = "slide" id="tech">
+	            <div class = "subSectionHeader">
+					<h2> Mapping Historic New Castle |	2016</h2>
+				</div>
+				
+				<p>While interning with the New Castle Historical Society, I collected and consolidated data on historical landmarks in New Castle, New York. Using this data, I created an <a href = "http://www.newcastlehs.org/historic-new-castle/new-castle-landmarks/interactive-map/">online interactive map</a> , marking over 50 landmarks to increase awareness of local history and the importance of landmark preservation. </br> </p>
+	        </div> <!-- end of slide -->
 
-        <div class = "division" id="sleresearch">
+	        <img id="main-slider-prev" class="slider-buttons" src="arrow_left.png" onclick="plusDivs(-1, 0)">
+            <img id="main-slider-next" class="slider-buttons" src="arrow_right.png" onclick="plusDivs(1, 0)">
+	   </div> <!-- end of slide show container-->
+
+	   <!-- Experience Slideshow -->
+	   <div class = "sectionHeader" id = "experience" > 
+	   		<h1> Experience </h1>
+	   </div>
+
+	   <div class = "division" id="sleresearch">
         	<div class = "subSectionHeader">
-        		<h1> Research on Systemic Lupus Erythematosus and Smoke Exposure |	2015</h1>
-        	</div>
+        		<h2> Research on Systemic Lupus Erythematosus and Smoke Exposure |	2015</h2>
+        	</div> 
 		
 			<p>Working at the Medical University of South Carolina, I investigated <a href = "http://static1.squarespace.com/static/56243822e4b0007a000ea37e/t/56c3bf19b6aa608da300d855/1455669017624/tara+anand.pdf">the gene x environment interaction</a> between single nucleotide polymorphisms in the gene ITGAM and passive childhood smoke exposure in a population of women with systemic lupus erythematosus, using polymorease chain reaction tests. </br>
 		</div>
 
-		<div class = "division" id="dance">
-			<div class = "subSectionHeader">
-				<h1> Columbia University Ballet Ensemble |	2017</h1>
-			</div>
 
-			<p> On campus, I'm the Assistant Executive Director of CUBE, the Columbia University Ballet Ensemble. I've recently redesigned our <a href = "http://www.columbia.edu/cu/cuballetensemble/index.html">website</a> and am working with our other board members to prepare for our Spring 2017 production of Sleeping Beauty. Last semester I was thrilled to dance in CUBE's production of Alice in Wonderland. </br> </p> 
-
-		<!--	<video  controls = "controls"><source src = "Ballet.mov"></video> -->
-
-			<iframe width="560" height="315" src="https://www.youtube.com/embed/UMiwMoB0E4A" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-
+		<!-- Dance Slideshow -->
+		<div class = "sectionHeader" id = "dance">
+			<h1> Dance </h1>
 		</div>
+		<div class = "container">
+			<div class = "slide2" id="cube">
+				<div class = "subSectionHeader">
+					<h2> Columbia University Ballet Ensemble |	2017</h2>
+				</div>
+
+				<p> On campus, I'm the Assistant Executive Director of CUBE, the Columbia University Ballet Ensemble. I've recently redesigned our <a href = "http://www.columbia.edu/cu/cuballetensemble/index.html">website</a> and am working with our other board members to prepare for our Spring 2017 production of Sleeping Beauty. Last semester I was thrilled to dance in CUBE's production of Alice in Wonderland. </br> </p> 
+			</div> <!-- end of slide-->
+
+			<div class = "slide2" id = "mnw">
+				<iframe width="560" height="315" src="https://www.youtube.com/embed/UMiwMoB0E4A" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+			</div> <!-- end of slide-->
+			<img id="main-slider-prev" class="slider-buttons" src="arrow_left.png" onclick="plusDivs(-1, 1)">
+            <img id="main-slider-next" class="slider-buttons" src="arrow_right.png" onclick="plusDivs(1, 1)">
+
+		</div><!-- end of slide show container-->
 
 
 <!--
@@ -240,8 +261,6 @@
     </div>
 -->
 
-		
-</div>
 		<div class = "footer">
 			<p>
 				<a href= "mailto:ta2432@barnard.edu"><img src = mail.png></a>

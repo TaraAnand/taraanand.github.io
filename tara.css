@@ -23,7 +23,7 @@ p{
 h1{
 	font-family:'Alegreya Sans SC', 'Alegreya Sans', sans-serif;
 	line-height: 1.5;
-	font-size: 40px;
+	font-size: 50px;
 	text-align: left;
 	
 }
@@ -54,6 +54,14 @@ h2{
 	box-shadow: inset 0 0 0 1000px rgba(31, 58, 147, .7);
 }
 
+.sectionHeader{
+    padding-left: 15%;
+    padding-top: 90px;
+
+    font-size: 50px;
+    background-color: rgb(230,230,230); 
+
+}
 
 .subSectionHeader{
     padding-top: 5%;
@@ -85,12 +93,13 @@ h2{
 	
 }
 
-#dance{
+#cube{
 	background: url('dance.jpg');
 	background-size: 100%;
 	margin: 0 auto;
 	/*box-shadow: inset 0 0 0 1000px rgba(31, 58, 147, .91);*/
     box-shadow: inset 0 0 0 1000px rgba(256, 256, 256, .91);
+    display: block;
 }
 
 #shower{
@@ -98,10 +107,12 @@ h2{
     background-size: 100%;
     margin: 0 auto; 
     box-shadow: inset 0 0 0 1000px rgba(256, 256, 256, .91);
+    display: block;
 }
 
 #About{
     padding-bottom: 10%;
+    padding-top: 0%
 }
 
 
@@ -142,6 +153,7 @@ h2{
 iframe{
     display: block;
     margin: 0 auto;
+    top: 200px;
 }
 
 ul{
@@ -165,7 +177,7 @@ ul{
     display: block;
  
     text-align: center;
-    padding: 4px 15px;
+    padding: 4px 25px;
     text-decoration: none;
 }
 
@@ -178,12 +190,7 @@ ul{
 ------------------------------------------------------------ */
 
 
-div.container {
-    width: 98vw;
-    height: 500px;
-    margin: 20px auto 0;
-    position: absolute;
-}
+
 #main-slider-space {
     overflow: hidden;
     width: 100%;
@@ -227,11 +234,13 @@ div.right {
 }
 #main-slider-prev {
     left: 40px;
-    background-image: url("../imgs/arrow_left.png");
+    top: 330px;
+    
 }
 #main-slider-next {
     right: 40px;
-    background-image: url("../imgs/arrow_right.png");
+    top: 330px;
+    
 }
 .section {
     position: relative;
@@ -301,6 +310,33 @@ div.right {
     right: 5%;
     background-image: url("../imgs/arrow_right.png");
 }*/
+
+.container {
+    position: relative;
+    margin-top: 0;
+}
+.slide{
+    position: relative;
+    margin-top: 0;
+    padding-left:15%;
+    padding-right:15%;
+    /*padding-bottom:30%; */
+    width: 70%;
+    height: 700px; 
+    display: none;
+}
+
+.slide2{
+    position: relative;
+    margin-top: 0;
+    padding-left:15%;
+    padding-right:15%;
+    /*padding-bottom:30%;*/
+    width: 70%;
+    height: 700px; 
+    display: none;
+}
+
 .division {
     position: relative;
     margin-top: 0;
