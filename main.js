@@ -17,8 +17,8 @@ function showDivs(n) {
 }
 */
 
-var slideIndex = [1,1];
-var slideId = ["slide", "slide2"]
+var slideIndex = [1,1,1];
+var slideId = ["slide", "slide2", "slide3"]
 showDivs(1, 0);
 showDivs(1, 1);
 
