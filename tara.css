@@ -242,26 +242,40 @@ ul{
 
 /* Slider
 ------------------------------------------------------------ */
-.slider-buttons {
+.slider-buttonsL{
     position: absolute;
     width: 60px;
     height: 60px;
     /*top: 30%;*/
     text-align: center;
     opacity: 0.4;
+    left: 40px;
+    top: 40%;
 }
-.slider-buttons:hover {
+.slider-buttonsR{
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    /*top: 30%;*/
+    text-align: center;
+    opacity: 0.4;
+    right: 40px;
+    top: 40%;
+}
+.slider-buttonsL:hover {
     cursor: pointer;
     opacity: 0.8;
 }
-#main-slider-prev {
-    left: 40px;
-    top: 40%;
+.slider-buttonsR:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
+/*#main-slider-prev {
+    
     
 }
 #main-slider-next {
-    right: 40px;
-    top: 40%;
+  */  
     
 }
 .section {
