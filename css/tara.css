@@ -1,0 +1,337 @@
+/* 
+	CSS 
+	Tara Anand 
+	August 2017 
+*/ 
+
+/* ----------------------- Typography ----------------------- */
+* {
+      margin: 0 auto;
+      padding: 0;
+      text-align: left;
+      line-height: 1.5;
+      color: rgb(0, 0, 0);
+      font-weight: normal;
+}
+
+p{
+	font-size:25px; 
+	font-family:'Alegreya Sans', sans-serif;
+    font-weight: bold;
+}
+
+a{
+    font-weight: bold;
+
+}
+
+h1{
+	font-family:'Alegreya Sans SC', 'Alegreya Sans', sans-serif;
+	line-height: 1.5;
+	font-size: 50px;
+	text-align: left;
+	
+}
+
+h2{
+	font-family:'Alegreya Sans SC', 'Alegreya Sans', sans-serif;
+	font-size: 30px;
+	line-height: 1.5;
+	text-align: left;
+    font-weight: bold;
+}
+
+h5{
+    font-family:'Alegreya Sans SC', 'Alegreya Sans', sans-serif;
+    font-size: 20px;
+    line-height: 1.5;
+    text-align: left;
+    font-weight: bold;
+    padding-left: 22%;
+}
+
+h6{
+    font-family:'Alegreya Sans SC', 'Alegreya Sans', sans-serif;
+    font-size: 17px;
+    line-height: 1.5;
+    text-align: left;
+    font-weight: bold;
+    padding-left: 22%;
+}
+
+.slide img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto; 
+    padding: 0px; 
+    margin-top: 0px; 
+    margin-bottom: 0px; 
+    width: 560px;
+}
+
+.slide2 img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto; 
+    padding: 0px; 
+    margin-top: 0px; 
+    margin-bottom: 0px; 
+    width: 560px;
+}
+
+
+.title{
+	color:rgb(255,255,255);
+	font-family: 'Cormorant', serif ;
+	font-size: 50px;
+	line-height: .3;
+	text-align: left;
+	padding: 0px;
+    font-weight: normal;
+}
+.header {
+	background: url('city.jpg');
+	background-size: 100%;
+	margin: 0 auto;
+	background-repeat:no-repeat;
+	padding-left: 5%;
+	padding-top: 11%;
+	padding-bottom:30px;
+	box-shadow: inset 0 0 0 1000px rgba(31, 58, 147, .7);
+}
+
+.sectionHeader{
+    padding-left: 15%;
+    padding-top: 80px; 
+    height: 80px;
+    font-size: 50px;
+    background-color: rgb(205,205,205); 
+    font-weight: normal;
+}
+
+.subSectionHeader{
+    padding-top: 15px;
+}
+
+.main{
+	/*font-family:'Alegreya Sans', sans-serif;
+	background-color: rgb(253, 253, 253);*/
+	padding:15%;
+	padding-top: 0px;
+	padding-bottom: 2%;
+}
+
+.division img{
+	border-radius: 20%;
+	width: 50%;
+	display: block;
+	/*margin: 0 auto;*/
+	/*padding-top: 20px;*/
+	
+}
+
+#tech {
+	background: url('tech.jpg');
+	background-size: 100%;
+	margin: 0 auto;
+    box-shadow: inset 0 0 0 1000px rgba(256, 256, 256, .93);
+	/*box-shadow: inset 0 0 0 1000px rgba(31, 58, 147, .91);*/
+	
+}
+
+#cube{
+	background: url('dance.jpg');
+	background-size: 100%;
+	margin: 0 auto;
+	/*box-shadow: inset 0 0 0 1000px rgba(31, 58, 147, .91);*/
+    box-shadow: inset 0 0 0 1000px rgba(256, 256, 256, .91);
+    display: block;
+}
+
+#shower{
+    background: url('shower.jpg');
+    background-size: 100%;
+    margin: 0 auto; 
+    box-shadow: inset 0 0 0 1000px rgba(256, 256, 256, .91);
+    display: block;
+}
+
+#adobe{
+    display: block;
+}
+
+#About{
+    padding-bottom: 10%;
+    padding-top: 0%
+}
+
+
+.footer {
+	background-color: rgb(31, 58, 147);
+	margin: 10 auto;
+	padding: 35px;
+	position: bottom;
+}
+
+.footer p{
+	text-align:center;
+	font-family: 'Alegreya Sans SC', sans-serif;
+	color:white;
+	line-height: 10.5px;
+	font-size:15px;
+}
+
+.footer img{
+	height:40px;
+	padding: 4px;
+	margin: 0 auto;
+}
+
+/* Nav Bar */ 
+.navbar{
+    text-align: center;
+    background-color: rgb(230,230,230);
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    font-size: 20px; 
+    font-family:'Alegreya Sans', sans-serif;
+    z-index:1;
+    color: black; 
+    height: 45px;
+    padding-top: 5px;
+
+}
+
+iframe{
+    display: block;
+    margin: 0 auto;
+    top: 200px;
+    padding-top: 20px;
+}
+
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.navbar a {
+    display: inline-block;
+}
+
+.navbar li{
+    /*display: inline;*/
+    float: left;
+}
+
+.navbar li a {
+    display: block;
+    font-weight: bold;
+    text-align: center;
+    padding: 4px 25px;
+    text-decoration: none;
+}
+
+
+
+
+
+
+/* Slider
+------------------------------------------------------------ */
+.slider-buttonsL{
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    /*top: 30%;*/
+    text-align: center;
+    opacity: 0.4;
+    left: 40px;
+    top: 40%;
+}
+.slider-buttonsR{
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    /*top: 30%;*/
+    text-align: center;
+    opacity: 0.4;
+    right: 40px;
+    top: 40%;
+}
+.slider-buttonsL:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
+.slider-buttonsR:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
+/*#main-slider-prev {
+    
+    
+}
+#main-slider-next {
+  */  
+    
+}
+.section {
+    position: relative;
+    margin-top: 0;
+    margin-left: -8px;
+    width: 100vw;
+    height: 88vh;
+    min-height: 600px;
+    max-height: 700px;
+    padding: 6vh 0;
+}
+
+.container {
+    position: relative;
+    margin-top: 0;
+}
+.slide{
+    position: relative;
+    margin-top: 0;
+    padding-left:15%;
+    padding-right:15%;
+    /*padding-bottom:30%; */
+    width: 70%;
+    height: 740px; 
+    display: none;
+}
+
+.slide2{
+    position: relative;
+    margin-top: 0;
+    padding-left:15%;
+    padding-right:15%;
+    /*padding-bottom:30%;*/
+    width: 70%;
+    height: 740px; 
+    display: none;
+}
+
+.slide3{
+    position: relative;
+    margin-top: 0;
+    padding-left:15%;
+    padding-right:15%;
+    /*padding-bottom:30%;*/
+    width: 70%;
+    height: 740px; 
+    display: none;
+}
+
+.division {
+    position: relative;
+    margin-top: 0;
+    padding-left:15%;
+    padding-right:15%;
+    padding-bottom:45%;
+    width: 70%;
+    height: auto;  
+}
