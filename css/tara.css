@@ -59,6 +59,28 @@ h6{
     padding-left: 22%;
 }
 
+button{
+    text-align: center;
+    background-color: rgb(230,230,230);
+    top: 0;
+    font-size: 20px;
+    font-weight: bold;
+    font-family:'Alegreya Sans', sans-serif;
+    z-index:1;
+    color: black; 
+    height: 40px;
+    width: 120px;
+    border: none;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: rgb(205,205,205);
+    color: white;
+}
+
 .slide img{
     display: block;
     margin-left: auto;
@@ -107,6 +129,23 @@ h6{
     font-size: 50px;
     background-color: rgb(205,205,205); 
     font-weight: normal;
+}
+
+.sectionHeaderActive{
+    padding-left: 15%;
+    padding-top: 80px; 
+    height: 80px;
+    font-size: 50px;
+    background-color: rgb(185,185,185); 
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.sectionHeaderActive h1{
+    font-family:'Alegreya Sans SC', 'Alegreya Sans', sans-serif;
+    line-height: 1.5;
+    font-size: 60px;
+    text-align: left;
+    font-weight: bold;
 }
 
 .subSectionHeader{
@@ -187,8 +226,13 @@ h6{
 
 .footer img{
 	height:40px;
-	padding: 4px;
+	padding: 5px;
 	margin: 0 auto;
+}
+
+.footer img:hover{
+    height:45px;
+    padding: 0px;
 }
 
 /* Nav Bar */ 
@@ -202,8 +246,9 @@ h6{
     font-family:'Alegreya Sans', sans-serif;
     z-index:1;
     color: black; 
-    height: 45px;
+    height: 40px;
     padding-top: 5px;
+    padding-bottom: 5px;
 
 }
 
