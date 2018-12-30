@@ -30,6 +30,8 @@ h1{
 	line-height: 1.5;
 	font-size: 50px;
 	text-align: left;
+    -webkit-transition: .6s; /* For Safari 3.1 to 6.0 */
+    transition: .6s;
 	
 }
 
@@ -129,13 +131,13 @@ button:hover {
     font-size: 50px;
     background-color: rgb(205,205,205); 
     font-weight: normal;
-    -webkit-transition: .2s; /* For Safari 3.1 to 6.0 */
-    transition: .2s;
+    -webkit-transition: .6s; /* For Safari 3.1 to 6.0 */
+    transition: .6s;
 }
 
 .sectionHeaderActive{
-    -webkit-transition: .2s; /* For Safari 3.1 to 6.0 */
-    transition: .2s;
+    -webkit-transition: .6s; /* For Safari 3.1 to 6.0 */
+    transition: .6s;
     padding-left: 15%;
     padding-top: 80px; 
     height: 80px;
@@ -152,6 +154,8 @@ button:hover {
     text-align: left;
     font-weight: bold;
     color: white;
+    -webkit-transition: .6s; /* For Safari 3.1 to 6.0 */
+    transition: .6s;
 }
 
 .subSectionHeader{

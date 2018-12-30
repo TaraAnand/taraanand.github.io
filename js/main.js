@@ -106,12 +106,12 @@ function scroll() {
     $(window).scroll(function() {
         var scroll = $(window).scrollTop();
         var currentSection; 
-        var i = 0; 
+        var i = 0.0; 
         header.each(function(){ 
             i++; 
 
             //var divPosition = $(this).offset().top; 
-            if( 750*(i+1) > scroll && scroll >= 750*i){
+            if( 750.0*(i+1) >= scroll && scroll >= 750.0*i){
                 currentSection = $(this); 
                 var id = currentSection.attr('id'); 
                 $("#"+id).removeClass('sectionHeader').addClass("sectionHeaderActive");
