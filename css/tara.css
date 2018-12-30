@@ -172,7 +172,7 @@ button:hover {
 
 .division img{
 	border-radius: 20%;
-	width: 25%;
+	width: 20vh;
 	display: block;
 	/*margin: 0 auto;*/
 	/*padding-top: 20px;*/
@@ -259,6 +259,7 @@ button:hover {
     height: 40px;
     padding-top: 5px;
     padding-bottom: 5px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
 
 }
 
@@ -294,6 +295,9 @@ ul{
     text-decoration: none;
 }
 
+.container{
+    height: 890px;
+}
 
 
 
@@ -329,26 +333,9 @@ ul{
     cursor: pointer;
     opacity: 0.8;
 }
-/*#main-slider-prev {
-    
-    
-}
-#main-slider-next {
-  */  
-    
-}
-.section {
-    position: relative;
-    margin-top: 0;
-    margin-left: -8px;
-    width: 100vw;
-    height: 88vh;
-    min-height: 600px;
-    max-height: 700px;
-    padding: 6vh 0;
-}
 
-.container {
+
+.SlideContainer {
     position: relative;
     margin-top: 0;
 }
@@ -392,5 +379,5 @@ ul{
     padding-right:15%;
     padding-bottom:45%;
     width: 70%;
-    height: auto;  
+      
 }
