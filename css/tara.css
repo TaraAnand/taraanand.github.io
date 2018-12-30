@@ -124,20 +124,25 @@ button:hover {
 
 .sectionHeader{
     padding-left: 15%;
-    padding-top: 80px; 
+    padding-top: 20px; 
     height: 80px;
     font-size: 50px;
     background-color: rgb(205,205,205); 
     font-weight: normal;
+    -webkit-transition: .2s; /* For Safari 3.1 to 6.0 */
+    transition: .2s;
 }
 
 .sectionHeaderActive{
+    -webkit-transition: .2s; /* For Safari 3.1 to 6.0 */
+    transition: .2s;
     padding-left: 15%;
     padding-top: 80px; 
     height: 80px;
     font-size: 50px;
     background-color: rgb(185,185,185); 
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    
 }
 
 .sectionHeaderActive h1{
@@ -146,6 +151,7 @@ button:hover {
     font-size: 60px;
     text-align: left;
     font-weight: bold;
+    color: white;
 }
 
 .subSectionHeader{
