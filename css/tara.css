@@ -238,6 +238,8 @@ button:hover {
 	height:40px;
 	padding: 5px;
 	margin: 0 auto;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
 }
 
 .footer img:hover{
