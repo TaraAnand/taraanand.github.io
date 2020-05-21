@@ -15,7 +15,7 @@
 }
 
 p{
-	font-size:25px; 
+	font-size: 1.838vw; 
 	font-family:'Alegreya Sans', sans-serif;
     font-weight: bold;
 }
@@ -75,6 +75,7 @@ button{
     border: none;
     -webkit-transition-duration: 0.4s;
     transition-duration: 0.4s;
+    max-width: 100%; 
 }
 
 button:hover {
@@ -91,6 +92,7 @@ button:hover {
     margin-top: 0px; 
     margin-bottom: 0px; 
     width: 500px;
+    max-width: 100%; 
 }
 
 .slide2 img{
@@ -101,6 +103,7 @@ button:hover {
     margin-top: 0px; 
     margin-bottom: 0px; 
     width: 500px;
+    max-width: 100%; 
 }
 
 
@@ -273,6 +276,7 @@ iframe{
     margin: 0 auto;
     top: 200px;
     padding-top: 20px;
+    max-width: 100%; 
 }
 
 ul{
