@@ -144,13 +144,11 @@ button:hover {
     -webkit-transition: .6s; /* For Safari 3.1 to 6.0 */
     transition: .6s;
     padding-left: 15%;
-  
     padding-top: 80px; 
     height: 80px;
     font-size: 50px;
     background-color: rgb(185,185,185); 
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    
 }
 
 .sectionHeaderActive h1{
@@ -358,7 +356,7 @@ ul{
     padding-right:15%;
     /*padding-bottom:30%; */
     width: 70%;
-    height: 740px; 
+    height: 900px; 
     display: none;
 }
 
@@ -369,7 +367,7 @@ ul{
     padding-right:15%;
     /*padding-bottom:30%;*/
     width: 70%;
-    height: 740px; 
+    height: 900px; 
     display: none;
 }
 
@@ -380,7 +378,7 @@ ul{
     padding-right:15%;
     /*padding-bottom:30%;*/
     width: 70%;
-    height: 740px; 
+    height: 760px; 
     display: none;
 }
 
@@ -396,19 +394,189 @@ ul{
 }
 
 
+/*********************************************************
+**********************************************************
+**********************************************************
+                     Small screens
+**********************************************************
+**********************************************************
+**********************************************************/
+
 @media only screen and (max-width: 800px) {
+    .division {
+        padding: 0px;
+        width: 85%;
+        max-width: 100%; 
+          
+    }
+    .header {
+        padding-top: 40px;
+        padding-bottom:20px;
+    }
     .title{
-        color:rgb(255,255,255);
-        font-family: 'Cormorant', serif ;
-        font-size: 50px;
-        line-height: .3;
+
+        font-size: 45px;
         text-align: center;
         padding: 0px;
-        font-weight: normal;
     }
-    
+    /****************** Navigation Bar ******************/ 
+    .navbar{
+        text-align: center;
+        background-color: rgb(230,230,230);
+        position: sticky;
+        position: -webkit-sticky;
+        top: 0;
+        font-size: 20px; 
+        font-family:'Alegreya Sans', sans-serif;
+        z-index:1;
+        color: black; 
+        height: 30px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+    }
+    button{
+        text-align: center;
+        background-color: rgb(230,230,230);
+        top: 0;
+        font-size: 20px;
+        font-weight: bold;
+        font-family:'Alegreya Sans', sans-serif;
+        z-index:1;
+        color: black; 
+        height: 30px;
+        width: 100px;
+        border: none;
+        -webkit-transition-duration: 0.4s;
+        transition-duration: 0.4s;
+        max-width: 100%; 
+    }
+
+    button:hover {
+        cursor: pointer;
+        background-color: rgb(205,205,205);
+        color: white;
+    }
+
+    .navbar a {
+        display: inline-block;
+    }
+
+    .navbar li{
+        float: left;
+    }
+
+    .navbar li a {
+        display: block;
+        font-weight: bold;
+        text-align: center;
+        padding: 2.5px 20px;
+        text-decoration: none;
+    }
+
+    /****************** Fonts ******************/
     p{
         font-size: 18px; 
+    }
+
+    h1{
+        font-size: 40px;
+        text-align: center;
+        -webkit-transition: .6s; /* For Safari 3.1 to 6.0 */
+        transition: .6s;
+    }
+    .sectionHeaderActive h1{
+        font-size: 50px;
+        text-align: center;
+        -webkit-transition: .4s; /* For Safari 3.1 to 6.0 */
+        transition: .4s;
+    }
+    #About h1{
+        text-align: left;
+    }
+    h2{
+      
+        font-size: 28px;
+        line-height: 1.5;
+        text-align: left;
+        font-weight: bold;
+    }
+
+    .sectionHeader{
+        padding-top: 35px; 
+        margin: 0;
+        height: 55px;
+        font-size: 50px;
+        background-color: rgb(205,205,205); 
+        font-weight: normal;
+        -webkit-transition: .6s; /* For Safari 3.1 to 6.0 */
+        transition: .6s;
+    }
+    .sectionHeaderActive{
+        -webkit-transition: .4s; /* For Safari 3.1 to 6.0 */
+        transition: .4s;
+        padding-left: 15%;
+        padding-top: 45px; 
+        height: 65px;
+        font-size: 50px;
+        background-color: rgb(185,185,185); 
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);    
+    }
+
+    /****************** Slider ******************/
+
+    .slider-buttonsL{
+        position: absolute;
+        width: 35px;
+        height: 60px;
+        /*top: 30%;*/
+        text-align: center;
+        opacity: 0.4;
+        left: 2vw;
+        top: 40%;
+        max-width: 100%; 
+    }
+    .slider-buttonsR{
+        position: absolute;
+        width: 35px;
+        height: 60px;
+        /*top: 30%;*/
+        text-align: center;
+        opacity: 0.4;
+        right: 2vw;
+        top: 40%;
+    }
+    .slide{
+        position: relative;
+        margin-top: 0;
+        padding-left:7.5%;
+        padding-right:7.55%;
+        /*padding-bottom:30%; */
+        width: 85%;
+        height: 900px; 
+        display: none;
+    }
+
+    .slide2{
+        position: relative;
+        margin-top: 0;
+        padding-left:7.5%;
+        padding-right:7.5%;
+        /*padding-bottom:30%;*/
+        width: 85%;
+        height: 900px; 
+        display: none;
+    }
+
+    .slide3{
+        position: relative;
+        margin-top: 0;
+        padding-left:7.5%;
+        padding-right:7.5%;
+        /*padding-bottom:30%;*/
+        width: 85%;
+        height: 760px; 
+        display: none;
     }
 }
 
