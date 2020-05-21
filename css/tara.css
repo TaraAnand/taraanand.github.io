@@ -724,7 +724,7 @@ ul{
         /*top: 30%;*/
         text-align: center;
         opacity: 0.4;
-        left: 2vw;
+        left: 1vw;
         top: 40%;
         max-width: 100%; 
     }
@@ -735,7 +735,7 @@ ul{
         /*top: 30%;*/
         text-align: center;
         opacity: 0.4;
-        right: 2vw;
+        right: 1vw;
         top: 40%;
     }
     .slide{
