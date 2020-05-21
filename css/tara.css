@@ -629,13 +629,13 @@ ul{
         text-align: center;
         background-color: rgb(230,230,230);
         top: 0;
-        font-size: 3.5vw;
+        font-size: 3.8vw;
         font-weight: bold;
         font-family:'Alegreya Sans', sans-serif;
         z-index:1;
         color: black; 
         height: 30px;
-        width: 20vw;
+        width: 19vw;
         border: none;
         -webkit-transition-duration: 0.4s;
         transition-duration: 0.4s;
