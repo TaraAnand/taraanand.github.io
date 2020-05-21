@@ -741,10 +741,10 @@ ul{
     .slide{
         position: relative;
         margin-top: 0;
-        padding-left:7.5%;
-        padding-right:7.55%;
+        padding-left:10%;
+        padding-right:10%;
         /*padding-bottom:30%; */
-        width: 85%;
+        width: 80%;
         height: 900px; 
         display: none;
     }
@@ -752,10 +752,10 @@ ul{
     .slide2{
         position: relative;
         margin-top: 0;
-        padding-left:7.5%;
-        padding-right:7.5%;
+        padding-left:10%;
+        padding-right:10%;
         /*padding-bottom:30%;*/
-        width: 85%;
+        width: 80%;
         height: 900px; 
         display: none;
     }
@@ -763,10 +763,10 @@ ul{
     .slide3{
         position: relative;
         margin-top: 0;
-        padding-left:7.5%;
-        padding-right:7.5%;
+        padding-left:10%;
+        padding-right:10%;
         /*padding-bottom:30%;*/
-        width: 85%;
+        width: 80%;
         height: 760px; 
         display: none;
     }
