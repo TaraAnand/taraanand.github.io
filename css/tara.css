@@ -616,7 +616,7 @@ ul{
         position: sticky;
         position: -webkit-sticky;
         top: 0;
-        font-size: 20px; 
+        font-size: 3vw; 
         font-family:'Alegreya Sans', sans-serif;
         z-index:1;
         color: black; 
@@ -629,7 +629,7 @@ ul{
         text-align: center;
         background-color: rgb(230,230,230);
         top: 0;
-        font-size: 3.8vw;
+        font-size: 3vw;
         font-weight: bold;
         font-family:'Alegreya Sans', sans-serif;
         z-index:1;
