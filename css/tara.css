@@ -492,6 +492,7 @@ ul{
     }
     .sectionHeaderActive h1{
         font-size: 50px;
+        padding-left: 0px;
         text-align: center;
         -webkit-transition: .4s; /* For Safari 3.1 to 6.0 */
         transition: .4s;
@@ -521,7 +522,7 @@ ul{
     .sectionHeaderActive{
         -webkit-transition: .4s; /* For Safari 3.1 to 6.0 */
         transition: .4s;
-        padding-left: 15%;
+        padding-left: 0px;
         padding-top: 45px; 
         height: 65px;
         font-size: 50px;
@@ -706,7 +707,7 @@ ul{
     .sectionHeaderActive{
         -webkit-transition: .4s; /* For Safari 3.1 to 6.0 */
         transition: .4s;
-        padding-left: 15%;
+        padding-left: 0px;
         padding-top: 45px; 
         height: 65px;
         font-size: 50px;
