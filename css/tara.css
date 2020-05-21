@@ -634,7 +634,7 @@ ul{
         z-index:1;
         color: black; 
         height: 30px;
-        width: 16.6vw;
+        width: 17vw;
         border: none;
         -webkit-transition-duration: 0.4s;
         transition-duration: 0.4s;
@@ -676,6 +676,7 @@ ul{
     }
     .sectionHeaderActive h1{
         font-size: 50px;
+        padding-left: 0px;
         text-align: center;
         -webkit-transition: .4s; /* For Safari 3.1 to 6.0 */
         transition: .4s;
