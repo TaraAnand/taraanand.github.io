@@ -509,6 +509,7 @@ ul{
 
     .sectionHeader{
         padding-top: 35px; 
+        padding-left: 0px;
         margin: 0;
         height: 55px;
         font-size: 50px;
@@ -555,7 +556,7 @@ ul{
         position: relative;
         margin-top: 0;
         padding-left:7.5%;
-        padding-right:7.55%;
+        padding-right:7.5%;
         /*padding-bottom:30%; */
         width: 85%;
         height: 900px; 
@@ -633,7 +634,7 @@ ul{
         z-index:1;
         color: black; 
         height: 30px;
-        width: 15vw;
+        width: 16.6vw;
         border: none;
         -webkit-transition-duration: 0.4s;
         transition-duration: 0.4s;
@@ -692,6 +693,7 @@ ul{
 
     .sectionHeader{
         padding-top: 35px; 
+        padding-left: 0px;
         margin: 0;
         height: 55px;
         font-size: 50px;
