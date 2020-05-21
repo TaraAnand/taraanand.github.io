@@ -15,7 +15,7 @@
 }
 
 p{
-	font-size: 1.838vw; 
+	font-size: 25px; 
 	font-family:'Alegreya Sans', sans-serif;
     font-weight: bold;
 }
@@ -116,6 +116,7 @@ button:hover {
 	padding: 0px;
     font-weight: normal;
 }
+
 .header {
 	background: url('../img/city.jpg');
 	background-size: 100%;
@@ -321,8 +322,9 @@ ul{
     /*top: 30%;*/
     text-align: center;
     opacity: 0.4;
-    left: 40px;
+    left: 2.941vw;
     top: 40%;
+    max-width: 100%; 
 }
 .slider-buttonsR{
     position: absolute;
@@ -331,7 +333,7 @@ ul{
     /*top: 30%;*/
     text-align: center;
     opacity: 0.4;
-    right: 40px;
+    right: 2.941vw;
     top: 40%;
 }
 .slider-buttonsL:hover {
@@ -385,9 +387,28 @@ ul{
 .division {
     position: relative;
     margin-top: 0;
-    padding-left:15%;
-    padding-right:15%;
+    padding-left:15vw;
+    padding-right:15vw;
     padding-bottom:45%;
     width: 70%;
+    max-width: 100%; 
       
 }
+
+
+@media only screen and (max-width: 800px) {
+    .title{
+        color:rgb(255,255,255);
+        font-family: 'Cormorant', serif ;
+        font-size: 50px;
+        line-height: .3;
+        text-align: center;
+        padding: 0px;
+        font-weight: normal;
+    }
+    
+    p{
+        font-size: 18px; 
+    }
+}
+
