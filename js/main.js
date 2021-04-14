@@ -103,15 +103,35 @@ function slider() {
 function scroll() {
     //caches a jQuery object containing the header element
     var header = $(".sectionHeader");
+
+    var nav = $(".navbar"); 
+    var distance = parseInt($("#aCon").css("height")) -parseInt($("#nav").css("height")) + 58.0;
+    console.log(distance);
+
+
+
+
     $(window).scroll(function() {
+
+        if ( $(window).scrollTop() >= distance ){
+            $("#nav").removeClass("navbar").addClass("navbarActive"); 
+        }
+        else{
+            $("#nav").removeClass("navbarActive").addClass("navbar");
+        }
+
+
         var scroll = $(window).scrollTop();
         var currentSection; 
         var i = 0.0; 
+        // var scrollOffset = parseInt($(".slide").css("height")); 
+       
+        var scrollOffset = 78.0;
+        var slideWindowHeight = 960.0;
         header.each(function(){ 
             i++; 
-
-            //var divPosition = $(this).offset().top; 
-            if( 750.0*(i+1) >= scroll && scroll >= 750.0*i){
+    
+            if( slideWindowHeight*(i+1) + scrollOffset >= scroll && scroll >= slideWindowHeight*i + scrollOffset){
                 currentSection = $(this); 
                 var id = currentSection.attr('id'); 
                 $("#"+id).removeClass('sectionHeader').addClass("sectionHeaderActive");
@@ -127,7 +147,51 @@ function scroll() {
     });
 };
 
+function collapse(){
+    $('#collapse').hide();
+    var slide = document.getElementById("info"); 
+
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+
+    var exp = document.getElementsByClassName("collapsibleReturn"); 
+    var j; 
+
+    for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.maxHeight){
+          content.style.maxHeight = null;
+          $("#info").removeClass("resumeExpanded").addClass("resume"); 
+          $('#expand').show();
+          $('#collapse').hide();
+
+        } else {
+          content.style.maxHeight = content.scrollHeight + "px";
+          $("#info").removeClass("resume").addClass("resumeExpanded");
+          $('#expand').hide();
+          $('#collapse').show();
+          
+        }
+      });
+    }
+
+    for (j = 0; j < exp.length; j++) {
+        exp[j].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.previousElementSibling;
+        content.style.maxHeight = null;
+        $("#info").removeClass("resumeExpanded").addClass("resume"); 
+        $('#expand').show();
+        $('#collapse').hide();
+
+      });
+    }
+}
+
 $(document).ready(function () {
     slider();
     scroll();
+    collapse(); 
 });
