@@ -1,7 +1,7 @@
 /* 
 	CSS 
 	Tara Anand 
-	January 2019 
+	July 2022
 
     Old colors: rgba(31, 58, 147, .7);;
 */ 
@@ -99,7 +99,9 @@ p{
 
 
 a{
-    font-weight: bold;
+    font-size: 25px; 
+    font-family:'Alegreya Sans', sans-serif;
+    /*font-weight: bold;*/
 
 }
 
@@ -124,7 +126,7 @@ h2{
 h3{
     font-size: 25px; 
     font-family:'Alegreya Sans', sans-serif;
-    font-weight: bolder;
+    /*font-weight: bold;*/
 }
 
 h5{
@@ -277,13 +279,6 @@ h6{
     
 }
 
-#technica{
-    display: block;
-}
-
-#adobe{
-    display: block;
-}
 
 .push{
     height: 60px;
@@ -586,8 +581,35 @@ ul{
     padding-right:15%;
     /*padding-bottom:30%;*/
     width: 70%;
-    height: 900px; 
+    height: 600px; 
     display: none;
+}
+
+#education{
+    display: block;
+}
+
+#publications{
+    position: relative;
+    display: block;
+    margin-top: 0;
+    padding-left:15%;
+    padding-right:15%;
+    /*padding-bottom:30%;*/
+    width: 70%;
+    height: 500px; 
+    /*display: none;*/
+}
+
+#posters{
+    display: block;
+    position: relative;
+    margin-top: 0;
+    padding-left:15%;
+    padding-right:15%;
+    /*padding-bottom:30%;*/
+    width: 70%;
+    height: 1000px; 
 }
 
 .slide3{
@@ -601,7 +623,15 @@ ul{
     display: none;
 }
 
+.box{
+    float:left;
+    margin-right:40px;
+    margin-left:40px;
 
+}
+.clear{
+    clear:both;
+}
 
 /*********************************************************
 **********************************************************
@@ -610,6 +640,14 @@ ul{
 **********************************************************
 **********************************************************
 **********************************************************/
+
+
+@media only screen and (max-width: 1150px) {
+
+    .slide2{
+        height:  950px;
+    }
+}
 
 
 /*********************************************************

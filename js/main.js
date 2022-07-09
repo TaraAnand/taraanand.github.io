@@ -105,7 +105,7 @@ function scroll() {
     var header = $(".sectionHeader");
 
     var nav = $(".navbar"); 
-    var distance = parseInt($("#aCon").css("height")) -parseInt($("#nav").css("height")) + 58.0;
+    var distance = parseInt($("#aCon").css("height")) -parseInt($("#nav").css("height")) + 30.0;
     console.log(distance);
 
 
@@ -124,14 +124,58 @@ function scroll() {
         var scroll = $(window).scrollTop();
         var currentSection; 
         var i = 0.0; 
+        var cumulativeScroll = 0.0; 
+        var nextScroll = 960.0
         // var scrollOffset = parseInt($(".slide").css("height")); 
        
         var scrollOffset = 78.0;
         var slideWindowHeight = 960.0;
+        var shortSlideWindowHeight = parseInt($(".slide2").css("height")) + 60;
+        var slideWindowHeight3 = parseInt($("#publications").css("height")) + 60;
+        var slideWindowHeight4 = parseInt($("#posters").css("height")) + 60;
+
         header.each(function(){ 
             i++; 
+            if(i == 2){
+                cumulativeScroll += shortSlideWindowHeight;
+            }
+            else if(i == 3){
+                cumulativeScroll += slideWindowHeight3; 
+            } 
+            else if (i == 4){
+                cumulativeScroll += slideWindowHeight4; 
+            }
+            else{
+                cumulativeScroll += slideWindowHeight;
+            }
+            
+            if(i == 1){
+                nextScroll += shortSlideWindowHeight;
+            }
+            else if (i == 2){
+                nextScroll += slideWindowHeight3;
+            }
+            else if(i == 3){
+                nextScroll += slideWindowHeight4
+            }
+            else{
+                nextScroll += slideWindowHeight;
+            }
+            
     
-            if( slideWindowHeight*(i+1) + scrollOffset >= scroll && scroll >= slideWindowHeight*i + scrollOffset){
+            // if( slideWindowHeight*(i+1) - (slideWindowHeight + shortSlideWindowHeight) + scrollOffset >= scroll && scroll >= slideWindowHeight*i - (slideWindowHeight + shortSlideWindowHeight*i) + scrollOffset){
+            //     currentSection = $(this); 
+            //     var id = currentSection.attr('id'); 
+            //     $("#"+id).removeClass('sectionHeader').addClass("sectionHeaderActive");
+            // }
+            // else{
+            //     currentSection = $(this); 
+            //     var id = currentSection.attr('id'); 
+            //     $("#"+id).removeClass("sectionHeaderActive").addClass('sectionHeader');
+
+            // }
+
+            if(nextScroll + scrollOffset >= scroll && scroll >= cumulativeScroll + scrollOffset){
                 currentSection = $(this); 
                 var id = currentSection.attr('id'); 
                 $("#"+id).removeClass('sectionHeader').addClass("sectionHeaderActive");
