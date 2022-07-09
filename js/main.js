@@ -133,6 +133,7 @@ function scroll() {
         var shortSlideWindowHeight = parseInt($(".slide2").css("height")) + 60;
         var slideWindowHeight3 = parseInt($("#publications").css("height")) + 60;
         var slideWindowHeight4 = parseInt($("#posters").css("height")) + 60;
+        var slideWindowHeight5 = parseInt($("#work").css("height")) + 60;
 
         header.each(function(){ 
             i++; 
@@ -145,6 +146,9 @@ function scroll() {
             else if (i == 4){
                 cumulativeScroll += slideWindowHeight4; 
             }
+            else if (i == 5){
+                cumulativeScroll += slideWindowHeight5;
+            }
             else{
                 cumulativeScroll += slideWindowHeight;
             }
@@ -156,7 +160,10 @@ function scroll() {
                 nextScroll += slideWindowHeight3;
             }
             else if(i == 3){
-                nextScroll += slideWindowHeight4
+                nextScroll += slideWindowHeight4;
+            }
+            else if(i ==4){
+                nextScroll += slideWindowHeight5;
             }
             else{
                 nextScroll += slideWindowHeight;

@@ -478,7 +478,7 @@ ul{
     padding-right:15%;
     /*padding-bottom:30%;*/
     width: 70%;
-    height: 60vh; 
+    height: 30vh; 
     display: none;
     /*transition: max-height 0.2s ease-out;*/
 }
@@ -585,8 +585,20 @@ ul{
     display: none;
 }
 
-#education{
+.slide2 ul{
+    list-style-type: square;
+    list-style-position: inside;
+    font-size: 25px; 
+    font-family:'Alegreya Sans', sans-serif;
+    font-weight: bold;
+}
+
+#education, #work{
     display: block;
+}
+
+#work{
+    height: 2200px; 
 }
 
 #publications{
@@ -696,8 +708,8 @@ ul{
         font-family:'Alegreya Sans', sans-serif;
         z-index:1;
         color: black; 
-        height: 30px;
-        width: 16.667vw;
+        height: 40px;
+        width: 40.667vw;
         border: none;
         -webkit-transition-duration: 0.4s;
         transition-duration: 0.4s;
