@@ -128,16 +128,24 @@ function scroll() {
         var nextScroll = 960.0
         // var scrollOffset = parseInt($(".slide").css("height")); 
        
+
+       // need to clean this 
+       // also need to figure out expansion at the end, something weird. (teaching and CV)
+
         var scrollOffset = 78.0;
-        var slideWindowHeight = 960.0;
-        var shortSlideWindowHeight = parseInt($(".slide2").css("height")) + 60;
-        var slideWindowHeight3 = parseInt($("#publications").css("height")) + 60;
-        var slideWindowHeight4 = parseInt($("#posters").css("height")) + 60;
-        var slideWindowHeight5 = parseInt($("#work").css("height")) + 60;
+        var slideWindowHeight = 960.0 ;
+        var shortSlideWindowHeight = parseInt($(".slide2").css("height")) + 80;
+        var slideWindowHeight3 = parseInt($("#publications").css("height")) + 80;
+        var slideWindowHeight4 = parseInt($("#posters").css("height")) + 80;
+        var slideWindowHeight5 = parseInt($("#work").css("height")) + 80;
+        var slideWindowHeight6 = parseInt($("#teaching").css("height")) + 80;
 
         header.each(function(){ 
             i++; 
-            if(i == 2){
+            if(i == 1){
+                cumulativeScroll += slideWindowHeight;
+            }
+            else if(i == 2){
                 cumulativeScroll += shortSlideWindowHeight;
             }
             else if(i == 3){
@@ -149,8 +157,12 @@ function scroll() {
             else if (i == 5){
                 cumulativeScroll += slideWindowHeight5;
             }
+            else if (i == 6){
+                cumulativeScroll += slideWindowHeight6;
+            }
             else{
-                cumulativeScroll += slideWindowHeight;
+                // cumulativeScroll += slideWindowHeight;
+                cumulativeScroll += shortSlideWindowHeight;
             }
             
             if(i == 1){
@@ -165,8 +177,13 @@ function scroll() {
             else if(i ==4){
                 nextScroll += slideWindowHeight5;
             }
+            else if(i==5){
+                nextScroll += slideWindowHeight6;
+            }
+     
             else{
-                nextScroll += slideWindowHeight;
+                // nextScroll += slideWindowHeight;
+                nextScroll += shortSlideWindowHeight;
             }
             
     
