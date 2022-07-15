@@ -581,7 +581,8 @@ ul{
     padding-right:15%;
     /*padding-bottom:30%;*/
     width: 70%;
-    height: 600px; 
+    /*height: 600px; */
+    height:  80vh; 
     display: none;
 }
 
@@ -613,7 +614,8 @@ ul{
     padding-right:15%;
     /*padding-bottom:30%;*/
     width: 70%;
-    height: 500px; 
+    /*height: 500px; */
+    height: 68vh;
     /*display: none;*/
 }
 
@@ -658,9 +660,9 @@ ul{
 **********************************************************/
 
 
-@media only screen and (max-width: 1250px) {
+@media only screen and (max-width: 1400px) {
     .slide2{
-        height:  950px;
+        height:  125vh;
     }
     #work{
         height: 2400px; 
@@ -669,18 +671,18 @@ ul{
         height: 1600px;
     }
     #publications{
-        height: 500px; 
+        /*height: 500px; */
         /*display: none;*/
     }
     #posters{
-        height: 1100px; 
+        height: 1200px; 
     }
 }
 
-@media only screen and (max-width: 1150px) {
-    .slide2{
+@media only screen and (max-width: 1075px) {
+/*    .slide2{
         height:  950px;
-    }
+    }*/
     #work{
         height: 2400px; 
     }
@@ -688,13 +690,15 @@ ul{
         height: 1600px;
     }
     #publications{
-        height: 500px; 
+        /*height: 500px; */
         /*display: none;*/
     }
     #posters{
-        height: 1100px; 
+        height: 1450px; 
     }
 }
+
+
 
 
 /*********************************************************
@@ -702,6 +706,16 @@ ul{
 **********************************************************/
 
 @media only screen and (max-width: 800px) {
+
+    #publications{
+        height: 700px; 
+        /*display: none;*/
+    }
+
+    #posters{
+        height: 2500px;
+    }
+
     .division {
         padding: 0px;
         width: 85%;
@@ -711,6 +725,10 @@ ul{
     .header {
         padding-top: 40px;
         padding-bottom:20px;
+    }
+
+    #projects{
+        padding-bottom: 70px;
     }
     .title{
 
@@ -865,7 +883,8 @@ ul{
         padding-right:7.5%;
         /*padding-bottom:30%;*/
         width: 85%;
-        height: 900px; 
+        /*height: 900px; */
+        /*height:  78vh;*/
         display: none;
     }
 
@@ -881,12 +900,36 @@ ul{
     }
 }
 
+/*********************************************************
+                     <600
+**********************************************************/
+@media only screen and (max-width: 700px) {
+    
+    #publications{
+        height: 700px; 
+        /*display: none;*/
+    }
+
+    #posters{
+        height: 2300px;
+    }
+}
 
 /*********************************************************
                      <500
 **********************************************************/
 
 @media only screen and (max-width: 500px) {
+    
+    #publications{
+        height: 700px; 
+        /*display: none;*/
+    }
+
+    #posters{
+        height: 2200px;
+    }
+
     .division {
         padding: 0px;
         width: 85%;
@@ -1050,7 +1093,7 @@ ul{
         padding-right:10%;
         /*padding-bottom:30%;*/
         width: 80%;
-        height: 950px; 
+        /*height: 950px; */
         display: none;
     }
 
