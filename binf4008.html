@@ -323,7 +323,7 @@
   <div class="wrap">
     <div class="hero-eyebrow">BINF 4008:004 · Fall 2026</div>
     <h1 class="title">Generating Real-World Evidence in Medicine</h1>
-    <p class="subtitle">A course on rigorous observational study design — building the theory of causal inference and the OHDSI tool stack into a single research workflow, from research question to submittable manuscript.</p>
+    <p class="subtitle">A course on thoughtful observational study design.</p>
   </div>
 </header>
 
@@ -332,9 +332,9 @@
     <div class="section-head">
       <h2 class="section-title">Course description</h2>
     </div>
-    <p class="lead">Healthcare systems generate enormous volumes of data, with electronic health records and administrative claims serving as rich sources of information. These real-world data sources are potential reservoirs of insight for biomedical discovery — but they arise from a data-generating process shaped by clinical workflow and billing practice, distinct from the biomedical processes we actually want to study. That gap is what makes distilling reliable insight from observational data hard.</p>
-    <p class="lead" style="margin-top: 16px;">This course introduces the theoretical foundations and practical methods for addressing that challenge through rigorous observational study design. Each topic is developed through three layers — theory, application in informatics, and implementation through the tools built by the OHDSI (Observational Health and Data Sciences and Informatics) consortium. Theory is grounded in probabilistic and causal inference, used to understand the biases of real-world health data and how study design can address them. Every stage of the pipeline is covered: formulating a precise research question, identifying the right data, defining study populations and phenotypes, and choosing the right analysis.</p>
-    <p class="lead" style="margin-top: 16px;">There are no formal prerequisites, though a basic grounding in probability, statistics, and introductory coding is expected. Every class session pairs lecture with hands-on exercise, so concepts are put into practice as soon as they're introduced.</p>
+    <p class="lead">Healthcare systems generate enormous volumes of data in various forms, with electronic health records and administrative claims in particular serving as rich sources of information. These real-world health data sources are potential reservoirs of insights for biomedical discovery. Real-world data, however, arises from a data-generating process, shaped by clinical workflow and billing practices, that is distinct from the true biomedical processes we aim to study. This can make distilling reliable insights from these observational data sources challenging. This course introduces the theoretical foundations and practical methods required for addressing these challenges through rigorous observational study design using real-world health data that can be used to generate reliable evidence to answer a range of clinical questions.</p>
+    <p class="lead" style="margin-top: 16px;">Each course topic is developed through three layers of theory, application in informatics, and implementation through tools developed by the Observational Health and Data Sciences and Informatics (OHDSI) consortium, which has developed analytic tools based on best practices for high-quality observational studies. The theory for this course is developed around the frameworks of probabilistic and causal inference, to facilitate understanding of study-design principles and analytic approaches that are thoughtfully informed by domain knowledge. We use theory to understand the challenges and biases of real-world health data, and how observational study design choices and methods can address them. Each stage of the observational study pipeline is covered including formulating a precise research question, identifying the right data, defining study populations and phenotypes, and determining and executing the appropriate analyses. </p>
+    <p class="lead" style="margin-top: 16px;">Tools and conventions developed by the OHDSI community will serve as a practical framework for implementing these concepts. We will examine how OHDSI tools can be used to quickly translate a well-designed research question into an executable study and to evaluate whether the resulting estimates are credible. Each class meeting includes both lecture and hands-on exercises so that concepts are translated into practice as they are introduced.</p>
   </div>
 </section>
 
@@ -342,15 +342,15 @@
   <div class="wrap">
     <div class="section-head">
       <h2 class="section-title">Learning objectives</h2>
-      <p class="section-dek">The course's three layers, and what you'll be able to do in each.</p>
+      <p class="section-dek"></p>
     </div>
     <div class="layers">
       <div class="layer">
         <div class="layer-kicker">Theory</div>
         <h3>Probabilistic &amp; causal inference</h3>
         <ul>
-          <li>Distinguish associational, interventional, and counterfactual queries</li>
-          <li>Construct causal diagrams representing assumptions about a data-generating process and its sources of bias</li>
+          <li>Distinguish between associational, interventional, and counterfactual queries</li>
+          <li>Construct causal diagrams representing assumptions about a data-generating process and sources of bias</li>
           <li>Analyze a Bayesian network to infer independencies and dependencies</li>
           <li>Evaluate causal effect identifiability from a diagram using key identification criteria</li>
         </ul>
@@ -396,7 +396,7 @@
       <div>
         <div class="week-title">Introduction</div>
         <ul>
-          <li><span class="dot theory"></span>Motivation and introduction to observational studies in informatics</li>
+          <li><span class="dot application"></span>Motivation and introduction to observational studies in informatics</li>
           <li><span class="dot theory"></span>Pearl's causal hierarchy</li>
           <li><span class="dot tool"></span>Introduction to OHDSI</li>
         </ul>
@@ -408,8 +408,7 @@
       <div>
         <div class="week-title">Understanding Data-Generating Processes</div>
         <ul>
-          <li><span class="dot theory"></span>Review of fundamentals: probability</li>
-          <li><span class="dot theory"></span>Interpretation of probabilities</li>
+          <li><span class="dot theory"></span>Introduction to structural causal models (SCMs)</li>
           <li><span class="dot application"></span>Domain context: EMR vs. claims data, and the OMOP common data model / vocabularies</li>
           <li><span class="dot tool"></span>ATLAS overview</li>
         </ul>
@@ -421,7 +420,7 @@
       <div>
         <div class="week-title">Encoding Knowledge</div>
         <ul>
-          <li><span class="dot theory"></span>Structural causal models and causal diagrams</li>
+          <li><span class="dot theory"></span>From structural causal models to causal diagrams</li>
           <li><span class="dot application"></span>Phenotyping: from diagrams to data</li>
           <li><span class="dot tool"></span>ATLAS: cohort construction, part 1</li>
         </ul>
@@ -554,7 +553,7 @@
       <div class="grade-detail">
         <h4>Weekly assignments</h4>
         <span class="pct">25% of grade</span>
-        <p>Primarily completed during the in-class lab portion of each session, putting that week's theory and application into practice with the OHDSI tools. Assignments not finished in class are due before the next session.</p>
+        <p>Putting theory and application into practice with OHDSI tools. Assignments not finished in class are due before the next session.</p>
       </div>
       <div class="grade-detail">
         <h4>Final project</h4>
@@ -574,7 +573,7 @@
   <div class="wrap">
     <div class="section-head">
       <h2 class="section-title">Final project</h2>
-      <p class="section-dek">Work independently or in pairs to design and execute one or more OHDSI-style observational studies. The goal: leave the course with a manuscript draft ready to submit to a clinical journal.</p>
+      <p class="section-dek">Work independently or in pairs to design and execute one or more OHDSI-style observational studies. The goal is to leave the course with a manuscript draft ready to submit to a clinical journal.</p>
     </div>
 
     <div class="project-item">
@@ -583,7 +582,7 @@
         <h4>Journal manuscript — 3,000 to 4,000 words</h4>
         <p>A journal-style research report formatted for a clinical journal, presenting your research question, analytical approach, results, and interpretation of findings.</p>
         <ol>
-          <li>Introduction / background</li>
+          <li>Introduction / Background</li>
           <li>Methods</li>
           <li>Results</li>
           <li>Discussion</li>
@@ -596,10 +595,10 @@
       <div class="project-num">B</div>
       <div>
         <h4>Study design &amp; execution reflection — 1 to 3 pages</h4>
-        <p>A more thorough account of your research process, including intermediate steps that won't be reflected in the manuscript itself.</p>
+        <p>A reflection piece describing a more thorough account of your research process, including intermediate steps that won't be reflected in the manuscript itself.</p>
         <ol>
-          <li>What informed your phenotype and study design choices — and what alternatives did you consider?</li>
-          <li>What early decisions needed refinement, and why?</li>
+          <li>What informed your phenotype and study design choices? What alternative choices could you have made, and why did you settle on the choices you did?</li>
+          <li>What decisions did you make initially that may not have worked? Why did they require refinement?</li>
           <li>How did you evaluate your choices along the way?</li>
         </ol>
       </div>
@@ -614,14 +613,14 @@
     </div>
 
     <div class="policy-block">
-      <h4>Data use &amp; security</h4>
-      <p>You will access and analyze real patient health data for educational purposes. This data is protected under HIPAA, and every student is bound by the corresponding standards of appropriate use.</p>
+      <h4>Data Use &amp; Security</h4>
+      <p>You will access to and analyze real patient health data for educational purposes. This data is protected under HIPAA, and every student is bound by the corresponding standards of appropriate use.</p>
       <div class="callout">
         <ol>
           <li>Data is accessed and analyzed through direct database access only. Do not download, copy, print, screenshot, or store any data on personal devices, USB drives, cloud storage, or anywhere beyond the approved database.</li>
-          <li>Patient data or database access credentials may not be shared with another individual or GenAI tool — including uploading data directly to GenAI, sharing credentials, copying code with hard-coded credentials into GenAI, or using agentic AI that can read files where credentials are stored.</li>
+          <li>Patient data or your database access credentials may not be shared with another individual or GenAI tool. You may not upload patient data directly to a GenAI tool or share your database access credentials. This includes copying code to GenAI where your credentials are hard-coded and using agentic AI that can read and access files where your credentials are stored.</li>
           <li>When you need to review individual records to understand data or verify an analysis, do so to the minimum extent necessary.</li>
-          <li>If you suspect data may have been compromised, report it to the instructor immediately — there is no penalty for promptly reported incidents.</li>
+          <li>If you suspect data may have been compromised, report it to the instructor immediately. There is no penalty for promptly reported incidents.</li>
         </ol>
       </div>
     </div>
@@ -636,11 +635,11 @@
         </div>
         <div class="component">
           <div class="component-label">Weekly assignments</div>
-          <p>Use GenAI to debug code or otherwise support your work, as long as it doesn't hinder your comprehension or compromise data security — including tools with full file access, such as Claude Code, that could read your database connection details directly.</p>
+          <p>Use GenAI to debug code or otherwise support your work, as long as it doesn't hinder your comprehension or compromise data security, including tools with full file access, such as Claude Code, that could read your database connection details directly.</p>
         </div>
         <div class="component">
           <div class="component-label">Final project</div>
-          <p>Same allowances and exceptions as weekly assignments. You're encouraged to develop your research ideas, write-ups, and slides on your own — each has requirements of accuracy and specificity you're unlikely to meet without your own critical thinking.</p>
+          <p>Same allowances and exceptions as weekly assignments. You're encouraged to develop your research ideas, write-ups, and slides on your own as each has requirements of accuracy and specificity you're unlikely to meet without your own critical thinking.</p>
         </div>
       </div>
     </div>
