@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Generating Real-World Evidence in Medicine — BINF 4008</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+
+  :root {
+    --bg: #EEF0EC;
+    --bg-panel: #E6E9E3;
+    --ink: #1C232C;
+    --ink-soft: #4B5460;
+    --ink-faint: #838C80;
+    --rule: #CBD0C6;
+    --rule-strong: #AEB6A5;
+    --accent: #3A4F78;
+    --accent-soft: #9AA6B8;
+    --mark: #B4862E;
+    --mark-soft: #E8DCC3;
+    --serif: 'Newsreader', Georgia, "Times New Roman", serif;
+    --sans: 'IBM Plex Sans', -apple-system, "Segoe UI", Arial, sans-serif;
+    --measure: 680px;
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #14171C;
+    --bg-panel: #1C212A;
+    --ink: #ECEAE2;
+    --ink-soft: #AEB3A8;
+    --ink-faint: #767C72;
+    --rule: #2C3138;
+    --rule-strong: #3B414A;
+    --accent: #8FA3C7;
+    --accent-soft: #6C7FA3;
+    --mark: #D9AE5F;
+    --mark-soft: #332B1A;
+  }
+
+  .theme-toggle {
+    font-family: var(--sans);
+    font-size: 13px;
+    color: var(--ink-soft);
+    background: none;
+    border: 1px solid var(--rule);
+    border-radius: 14px;
+    padding: 4px 12px;
+    cursor: pointer;
+    flex: none;
+    white-space: nowrap;
+  }
+  .theme-toggle:hover { color: var(--ink); border-color: var(--rule-strong); }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    line-height: 1.65;
+    font-size: 17px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection { background: var(--accent); color: var(--bg); }
+
+  h1, h2, h3 {
+    font-family: var(--serif);
+    font-weight: 500;
+    color: var(--ink);
+    margin: 0;
+  }
+
+  a { color: var(--accent); text-decoration-color: var(--accent-soft); text-underline-offset: 3px; }
+  a:hover { color: var(--mark); }
+
+  .wrap {
+    max-width: var(--measure);
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+  /* ---------- Nav ---------- */
+  nav.topnav {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: color-mix(in srgb, var(--bg) 90%, transparent);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--rule);
+  }
+  nav.topnav .wrap {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    height: 54px;
+  }
+  nav.topnav .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+  nav.topnav .nav-links::-webkit-scrollbar { display: none; }
+  nav.topnav .mark-label {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 15px;
+    color: var(--ink);
+    white-space: nowrap;
+    flex: none;
+  }
+  nav.topnav a {
+    font-size: 14px;
+    color: var(--ink-soft);
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  nav.topnav a:hover { color: var(--accent); }
+
+  /* ---------- Hero ---------- */
+  header.hero {
+    padding: 64px 0 44px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .hero-eyebrow {
+    font-size: 14px;
+    color: var(--mark);
+    margin-bottom: 16px;
+    letter-spacing: 0.01em;
+  }
+  h1.title {
+    font-size: 38px;
+    line-height: 1.18;
+    letter-spacing: -0.005em;
+    max-width: 16ch;
+  }
+  .subtitle {
+    margin-top: 16px;
+    font-size: 17px;
+    color: var(--ink-soft);
+    max-width: 52ch;
+  }
+
+  /* ---------- Section shell ---------- */
+  section { padding: 54px 0; border-bottom: 1px solid var(--rule); }
+  section:last-of-type { border-bottom: none; }
+  .section-head { margin-bottom: 28px; max-width: 62ch; }
+  h2.section-title { font-size: 25px; letter-spacing: -0.005em; }
+  .section-dek { margin-top: 10px; color: var(--ink-soft); font-size: 15px; }
+
+  p.lead { font-size: 16px; color: var(--ink-soft); max-width: 66ch; }
+
+  /* ---------- Three-layer objectives ---------- */
+  .layers {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  .layer { background: var(--bg-panel); padding: 24px 22px 26px; }
+  .layer-kicker {
+    font-size: 12.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 12px;
+    font-weight: 500;
+  }
+  .layer:nth-child(1) .layer-kicker { color: var(--accent); }
+  .layer:nth-child(2) .layer-kicker { color: var(--mark); }
+  .layer:nth-child(3) .layer-kicker { color: var(--ink-faint); }
+  .layer h3 { font-size: 18px; margin-bottom: 12px; font-style: italic; }
+  .layer ul { margin: 0; padding-left: 18px; font-size: 14px; color: var(--ink-soft); }
+  .layer li { margin-bottom: 9px; }
+  .layer li::marker { color: var(--ink-faint); }
+
+  /* ---------- Schedule ---------- */
+  .legend { display: flex; gap: 18px; margin-bottom: 24px; flex-wrap: wrap; }
+  .legend-item { display: flex; align-items: center; gap: 7px; font-size: 12.5px; color: var(--ink-soft); }
+  .dot { width: 7px; height: 7px; border-radius: 50%; flex: none; }
+  .dot.theory { background: var(--accent); }
+  .dot.application { background: var(--mark); }
+  .dot.tool { background: var(--ink-faint); }
+
+  .week {
+    display: grid;
+    grid-template-columns: 92px 1fr;
+    gap: 20px;
+    padding: 22px 0;
+    border-top: 1px solid var(--rule);
+  }
+  .week.is-break { color: var(--ink-faint); }
+  .week-meta { padding-top: 2px; }
+  .week-num { font-family: var(--serif); font-size: 22px; color: var(--ink-faint); line-height: 1; }
+  .week-date { font-size: 12px; color: var(--ink-faint); margin-top: 6px; }
+  .week-title {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 16px;
+    color: var(--mark);
+    margin-bottom: 10px;
+  }
+  .week-title:empty { margin-bottom: 0; }
+  .week ul { margin: 0; padding: 0; list-style: none; }
+  .week li { display: flex; gap: 10px; padding: 4px 0; font-size: 14.5px; }
+  .week li .dot { margin-top: 7px; }
+  .week-break-label { font-size: 14.5px; padding-top: 2px; }
+
+  /* ---------- Format & grading ---------- */
+  .gradebar {
+    display: flex;
+    height: 30px;
+    border-radius: 3px;
+    overflow: hidden;
+    border: 1px solid var(--rule);
+    margin-bottom: 22px;
+  }
+  .gradebar span { display: flex; align-items: center; justify-content: center; font-size: 12px; color: var(--bg); }
+  .gs-weekly { width: 25%; background: var(--accent); }
+  .gs-final { width: 50%; background: var(--mark); }
+  .gs-part { width: 25%; background: var(--ink-faint); }
+
+  .grade-detail-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .grade-detail h4 { font-family: var(--sans); font-weight: 600; font-size: 15px; margin: 0 0 6px; }
+  .grade-detail .pct { font-size: 12px; color: var(--ink-faint); display: block; margin-bottom: 8px; }
+  .grade-detail p { margin: 0; font-size: 14px; color: var(--ink-soft); }
+
+  /* ---------- Project ---------- */
+  .project-item {
+    display: grid;
+    grid-template-columns: 30px 1fr;
+    gap: 18px;
+    padding: 22px 0;
+    border-top: 1px solid var(--rule);
+  }
+  .project-item:last-child { padding-bottom: 0; }
+  .project-num { font-family: var(--serif); font-style: italic; color: var(--mark); font-size: 17px; padding-top: 1px; }
+  .project-item h4 { font-size: 16px; margin: 0 0 6px; font-family: var(--sans); font-weight: 600; }
+  .project-item p { margin: 0 0 10px; font-size: 14.5px; color: var(--ink-soft); }
+  .project-item ol { margin: 8px 0 0; padding-left: 18px; font-size: 14px; color: var(--ink-soft); }
+  .project-item ol li { margin-bottom: 6px; }
+
+  /* ---------- Policy callouts ---------- */
+  .callout {
+    border: 1px solid var(--rule);
+    background: var(--bg-panel);
+    border-radius: 3px;
+    padding: 24px 22px 26px;
+    margin-bottom: 26px;
+  }
+  .callout h4 { font-family: var(--sans); font-weight: 600; font-size: 14.5px; margin: 0 0 10px; }
+  .callout ol, .callout p { margin: 0; font-size: 14.5px; color: var(--ink); }
+  .callout ol { padding-left: 18px; }
+  .callout li { margin-bottom: 8px; }
+
+  .policy-block { margin-top: 30px; }
+  .policy-block:first-child { margin-top: 0; }
+  .policy-block h4 { font-family: var(--sans); font-weight: 600; font-size: 15.5px; margin: 0 0 8px; }
+  .policy-block > p { font-size: 14.5px; color: var(--ink-soft); max-width: 68ch; margin: 0 0 16px; }
+
+  .component-list { display: grid; gap: 14px; }
+  .component { display: grid; grid-template-columns: 130px 1fr; gap: 16px; padding: 14px 0; border-top: 1px solid var(--rule); }
+  .component-label { font-size: 12.5px; color: var(--accent); padding-top: 2px; font-weight: 500; }
+  .component p { margin: 0; font-size: 14px; color: var(--ink-soft); }
+
+  /* ---------- Resources ---------- */
+  .resources { display: grid; gap: 1px; background: var(--rule); border: 1px solid var(--rule); border-radius: 3px; overflow: hidden; }
+  .resource { background: var(--bg-panel); padding: 15px 20px; display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+  .resource .r-title { font-family: var(--serif); font-style: italic; font-size: 16px; }
+  .resource .r-tag { font-size: 11.5px; color: var(--ink-faint); white-space: nowrap; }
+
+  /* ---------- Logistics ---------- */
+  .logistics-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px 34px; }
+  .logistics-grid dt { font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ink-faint); margin-bottom: 4px; }
+  .logistics-grid dd { margin: 0; font-size: 15px; }
+
+  /* ---------- Footer ---------- */
+  footer { padding: 32px 0 56px; }
+  .footer-note { font-size: 13px; color: var(--ink-faint); }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 780px) {
+    .layers { grid-template-columns: 1fr; }
+    .grade-detail-grid { grid-template-columns: 1fr; }
+    .logistics-grid { grid-template-columns: 1fr; }
+    h1.title { font-size: 30px; }
+    .week { grid-template-columns: 1fr; }
+    .week-meta { display: flex; align-items: baseline; gap: 10px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="topnav">
+  <div class="wrap">
+    <span class="mark-label">BINF 4008</span>
+    <div class="nav-links">
+      <a href="#overview">Overview</a>
+      <a href="#objectives">Objectives</a>
+      <a href="#schedule">Schedule</a>
+      <a href="#format">Format &amp; grading</a>
+      <a href="#project">Final project</a>
+      <a href="#policies">Policies</a>
+      <a href="#resources">Resources</a>
+      <a href="#logistics">Logistics</a>
+    </div>
+    <button class="theme-toggle" id="theme-toggle" type="button">Dark mode</button>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-eyebrow">BINF 4008:004 · Fall 2026</div>
+    <h1 class="title">Generating Real-World Evidence in Medicine</h1>
+    <p class="subtitle">A course on rigorous observational study design — building the theory of causal inference and the OHDSI tool stack into a single research workflow, from research question to submittable manuscript.</p>
+  </div>
+</header>
+
+<section id="overview">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 class="section-title">Course description</h2>
+    </div>
+    <p class="lead">Healthcare systems generate enormous volumes of data, with electronic health records and administrative claims serving as rich sources of information. These real-world data sources are potential reservoirs of insight for biomedical discovery — but they arise from a data-generating process shaped by clinical workflow and billing practice, distinct from the biomedical processes we actually want to study. That gap is what makes distilling reliable insight from observational data hard.</p>
+    <p class="lead" style="margin-top: 16px;">This course introduces the theoretical foundations and practical methods for addressing that challenge through rigorous observational study design. Each topic is developed through three layers — theory, application in informatics, and implementation through the tools built by the OHDSI (Observational Health and Data Sciences and Informatics) consortium. Theory is grounded in probabilistic and causal inference, used to understand the biases of real-world health data and how study design can address them. Every stage of the pipeline is covered: formulating a precise research question, identifying the right data, defining study populations and phenotypes, and choosing the right analysis.</p>
+    <p class="lead" style="margin-top: 16px;">There are no formal prerequisites, though a basic grounding in probability, statistics, and introductory coding is expected. Every class session pairs lecture with hands-on exercise, so concepts are put into practice as soon as they're introduced.</p>
+  </div>
+</section>
+
+<section id="objectives">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 class="section-title">Learning objectives</h2>
+      <p class="section-dek">The course's three layers, and what you'll be able to do in each.</p>
+    </div>
+    <div class="layers">
+      <div class="layer">
+        <div class="layer-kicker">Theory</div>
+        <h3>Probabilistic &amp; causal inference</h3>
+        <ul>
+          <li>Distinguish associational, interventional, and counterfactual queries</li>
+          <li>Construct causal diagrams representing assumptions about a data-generating process and its sources of bias</li>
+          <li>Analyze a Bayesian network to infer independencies and dependencies</li>
+          <li>Evaluate causal effect identifiability from a diagram using key identification criteria</li>
+        </ul>
+      </div>
+      <div class="layer">
+        <div class="layer-kicker">Application</div>
+        <h3>Informatics for observational studies</h3>
+        <ul>
+          <li>Articulate potential sources of bias in EHR and claims databases</li>
+          <li>Formulate precise research questions with clearly specified study components</li>
+          <li>Define phenotypes and study cohorts that minimize measurement and other biases</li>
+          <li>Determine the appropriate analysis for a specified question</li>
+        </ul>
+      </div>
+      <div class="layer">
+        <div class="layer-kicker">Tools</div>
+        <h3>The OHDSI workflow</h3>
+        <ul>
+          <li>Understand the OMOP common data model and standardized vocabularies</li>
+          <li>Construct cohort definitions in ATLAS and evaluate phenotypes</li>
+          <li>Execute characterization, prediction, and estimation studies with Strategus</li>
+          <li>Evaluate results using diagnostics</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="schedule">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 class="section-title">Schedule</h2>
+      <p class="section-dek">Twelve weeks, each moving from theory to application to tool. Week titles to come.</p>
+    </div>
+    <div class="legend">
+      <div class="legend-item"><span class="dot theory"></span>Theory</div>
+      <div class="legend-item"><span class="dot application"></span>Application</div>
+      <div class="legend-item"><span class="dot tool"></span>Tool</div>
+    </div>
+
+    <div class="week">
+      <div class="week-meta"><div class="week-num">01</div><div class="week-date">9/8/26</div></div>
+      <div>
+        <div class="week-title"><!-- week title --></div>
+        <ul>
+          <li><span class="dot theory"></span>Motivation and introduction to observational studies in informatics</li>
+          <li><span class="dot theory"></span>Pearl's causal hierarchy</li>
+          <li><span class="dot tool"></span>Introduction to OHDSI</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="week">
+      <div class="week-meta"><div class="week-num">02</div><div class="week-date">9/15/26</div></div>
+      <div>
+        <div class="week-title"><!-- week title --></div>
+        <ul>
+          <li><span class="dot theory"></span>Review of fundamentals: probability</li>
+          <li><span class="dot theory"></span>Interpretation of probabilities</li>
+          <li><span class="dot application"></span>Domain context: EMR vs. claims data, and the OMOP common data model / vocabularies</li>
+          <li><span class="dot tool"></span>ATLAS overview</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="week">
+      <div class="week-meta"><div class="week-num">03</div><div class="week-date">9/22/26</div></div>
+      <div>
+        <div class="week-title"><!-- week title --></div>
+        <ul>
+          <li><span class="dot theory"></span>Structural causal models and causal diagrams</li>
+          <li><span class="dot application"></span>Phenotyping: from diagrams to data</li>
+          <li><span class="dot tool"></span>ATLAS: cohort construction, part 1</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="week">
+      <div class="week-meta"><div class="week-num">04</div><div class="week-date">9/29/26</div></div>
+      <div>
+        <div class="week-title"><!-- week title --></div>
+        <ul>
+          <li><span class="dot theory"></span>d-Separation with causal diagrams, part 1 — determining probabilities from diagrams</li>
+          <li><span class="dot application"></span>Formulating associational queries (characterization)</li>
+          <li><span class="dot tool"></span>Strategus Characterization package</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="week">
+      <div class="week-meta"><div class="week-num">05</div><div class="week-date">10/6/26</div></div>
+      <div>
+        <div class="week-title"><!-- week title --></div>
+        <ul>
+          <li><span class="dot theory"></span>d-Separation with causal diagrams, part 2 — reading independence structure</li>
+          <li><span class="dot application"></span>Formulating associational queries (prediction)</li>
+          <li><span class="dot tool"></span>Strategus Patient-level prediction package</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="week">
+      <div class="week-meta"><div class="week-num">06</div><div class="week-date">10/13/26</div></div>
+      <div>
+        <div class="week-title"><!-- week title --></div>
+        <ul>
+          <li><span class="dot theory"></span>Identification, part 1 — backdoor criterion and adjustment sets</li>
+          <li><span class="dot application"></span>Graphically encoding biases in medical data, part 1</li>
+          <li><span class="dot tool"></span>ATLAS: cohort construction, part 2</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="week">
+      <div class="week-meta"><div class="week-num">07</div><div class="week-date">10/20/26</div></div>
+      <div>
+        <div class="week-title"><!-- week title --></div>
+        <ul>
+          <li><span class="dot theory"></span>Identification, part 2 — conditional backdoor, frontdoor criterion</li>
+          <li><span class="dot application"></span>Graphically encoding biases in medical data, part 2</li>
+          <li><span class="dot tool"></span>Strategus CohortDiagnostics</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="week">
+      <div class="week-meta"><div class="week-num">08</div><div class="week-date">10/27/26</div></div>
+      <div>
+        <div class="week-title"><!-- week title --></div>
+        <ul>
+          <li><span class="dot theory"></span>From identification to estimation — propensity-score analysis</li>
+          <li><span class="dot application"></span>Cohort study design</li>
+          <li><span class="dot tool"></span>Strategus Population-level estimation (CohortMethod) package</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="week is-break">
+      <div class="week-meta"><div class="week-num">—</div><div class="week-date">11/2/26</div></div>
+      <div class="week-break-label">Election day — no class</div>
+    </div>
+
+    <div class="week is-break">
+      <div class="week-meta"><div class="week-num">—</div><div class="week-date">11/10/26</div></div>
+      <div class="week-break-label">AMIA — no class. Sign up for a 30-minute 1:1 final project consult.</div>
+    </div>
+
+    <div class="week">
+      <div class="week-meta"><div class="week-num">09</div><div class="week-date">11/17/26</div></div>
+      <div>
+        <div class="week-title"><!-- week title --></div>
+        <ul>
+          <li><span class="dot application"></span>Bias evaluation and diagnostics</li>
+          <li><span class="dot application"></span>Self-controlled case series study design</li>
+          <li><span class="dot tool"></span>Strategus SCCS package</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="week">
+      <div class="week-meta"><div class="week-num">10</div><div class="week-date">11/24/26</div></div>
+      <div>
+        <div class="week-title"><!-- week title --></div>
+        <ul>
+          <li><span class="dot theory"></span>Transportability and data fusion</li>
+          <li><span class="dot application"></span>Meta-analyses and network studies</li>
+          <li><span class="dot tool"></span>Strategus EvidenceSynthesis tool</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="week">
+      <div class="week-meta"><div class="week-num">11</div><div class="week-date">12/1/26</div></div>
+      <div>
+        <div class="week-title"><!-- week title --></div>
+        <ul><li>Project presentation</li></ul>
+      </div>
+    </div>
+
+    <div class="week">
+      <div class="week-meta"><div class="week-num">12</div><div class="week-date">12/8/26</div></div>
+      <div>
+        <div class="week-title"><!-- week title --></div>
+        <ul><li>Special topics in observational research</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="format">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 class="section-title">Format &amp; grading</h2>
+    </div>
+    <div class="gradebar" role="img" aria-label="Weekly assignments 25 percent, final project 50 percent, participation and attendance 25 percent">
+      <span class="gs-weekly">25%</span>
+      <span class="gs-final">50%</span>
+      <span class="gs-part">25%</span>
+    </div>
+    <div class="grade-detail-grid">
+      <div class="grade-detail">
+        <h4>Weekly assignments</h4>
+        <span class="pct">25% of grade</span>
+        <p>Primarily completed during the in-class lab portion of each session, putting that week's theory and application into practice with the OHDSI tools. Assignments not finished in class are due before the next session.</p>
+      </div>
+      <div class="grade-detail">
+        <h4>Final project</h4>
+        <span class="pct">50% of grade</span>
+        <p>An independent or paired OHDSI-style observational study, developed in consultation with the instructor, answering a clinically relevant research question of your choosing.</p>
+      </div>
+      <div class="grade-detail">
+        <h4>Participation &amp; attendance</h4>
+        <span class="pct">25% of grade</span>
+        <p>Attendance is expected at every session (two weeks' notice for planned absences; 24 hours or ASAP for illness). Assessed through active engagement in lecture and lab.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="project">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 class="section-title">Final project</h2>
+      <p class="section-dek">Work independently or in pairs to design and execute one or more OHDSI-style observational studies. The goal: leave the course with a manuscript draft ready to submit to a clinical journal.</p>
+    </div>
+
+    <div class="project-item">
+      <div class="project-num">A</div>
+      <div>
+        <h4>Journal manuscript — 3,000 to 4,000 words</h4>
+        <p>A journal-style research report formatted for a clinical journal, presenting your research question, analytical approach, results, and interpretation of findings.</p>
+        <ol>
+          <li>Introduction / background</li>
+          <li>Methods</li>
+          <li>Results</li>
+          <li>Discussion</li>
+          <li>Conclusion</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="project-item">
+      <div class="project-num">B</div>
+      <div>
+        <h4>Study design &amp; execution reflection — 1 to 3 pages</h4>
+        <p>A more thorough account of your research process, including intermediate steps that won't be reflected in the manuscript itself.</p>
+        <ol>
+          <li>What informed your phenotype and study design choices — and what alternatives did you consider?</li>
+          <li>What early decisions needed refinement, and why?</li>
+          <li>How did you evaluate your choices along the way?</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="policies">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 class="section-title">Policies</h2>
+    </div>
+
+    <div class="policy-block">
+      <h4>Data use &amp; security</h4>
+      <p>You will access and analyze real patient health data for educational purposes. This data is protected under HIPAA, and every student is bound by the corresponding standards of appropriate use.</p>
+      <div class="callout">
+        <ol>
+          <li>Data is accessed and analyzed through direct database access only. Do not download, copy, print, screenshot, or store any data on personal devices, USB drives, cloud storage, or anywhere beyond the approved database.</li>
+          <li>Patient data or database access credentials may not be shared with another individual or GenAI tool — including uploading data directly to GenAI, sharing credentials, copying code with hard-coded credentials into GenAI, or using agentic AI that can read files where credentials are stored.</li>
+          <li>When you need to review individual records to understand data or verify an analysis, do so to the minimum extent necessary.</li>
+          <li>If you suspect data may have been compromised, report it to the instructor immediately — there is no penalty for promptly reported incidents.</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="policy-block">
+      <h4>Generative AI</h4>
+      <p>You're generally encouraged to use GenAI tools as you see fit throughout the course, with the data-security exceptions above. For any submitted work, you'll be asked to describe with some specificity how you used GenAI. If your use appears to have hindered your understanding of key concepts or prevented you from submitting accurate, high-quality work, you'll meet with the instructor to discuss it and revise and resubmit with that guidance.</p>
+      <div class="component-list">
+        <div class="component">
+          <div class="component-label">Lectures</div>
+          <p>Recording or transcribing lectures with any tool isn't permitted, except with written approval from the accommodations office. Slides are posted after each class.</p>
+        </div>
+        <div class="component">
+          <div class="component-label">Weekly assignments</div>
+          <p>Use GenAI to debug code or otherwise support your work, as long as it doesn't hinder your comprehension or compromise data security — including tools with full file access, such as Claude Code, that could read your database connection details directly.</p>
+        </div>
+        <div class="component">
+          <div class="component-label">Final project</div>
+          <p>Same allowances and exceptions as weekly assignments. You're encouraged to develop your research ideas, write-ups, and slides on your own — each has requirements of accuracy and specificity you're unlikely to meet without your own critical thinking.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="resources">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 class="section-title">Textbook &amp; resources</h2>
+    </div>
+    <div class="resources">
+      <div class="resource"><span class="r-title">The Book of OHDSI</span><span class="r-tag">required</span></div>
+      <div class="resource"><span class="r-title">Causal Artificial Intelligence</span><span class="r-tag">required</span></div>
+      <div class="resource"><span class="r-title">The Book of Why</span><span class="r-tag">optional</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="logistics">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 class="section-title">Logistics</h2>
+    </div>
+    <dl class="logistics-grid">
+      <div>
+        <dt>Class sessions</dt>
+        <dd>Tuesdays, 2:10–4:00pm</dd>
+      </div>
+      <div>
+        <dt>Location</dt>
+        <dd>PH20-200</dd>
+      </div>
+      <div>
+        <dt>Instructor</dt>
+        <dd>Tara Anand — <a href="mailto:tara.v.anand@columbia.edu">tara.v.anand@columbia.edu</a></dd>
+      </div>
+      <div>
+        <dt>Teaching assistant</dt>
+        <dd>Muying Li — <a href="mailto:ml5218@cumc.columbia.edu">ml5218@cumc.columbia.edu</a></dd>
+      </div>
+      <div>
+        <dt>Office hours</dt>
+        <dd>By appointment</dd>
+      </div>
+    </dl>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-note">BINF 4008:004 · Generating Real-World Evidence in Medicine · Fall 2026 · <a href="https://taravanand.com/#teaching">taravanand.com</a></div>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var root = document.documentElement;
+    var btn = document.getElementById('theme-toggle');
+    var stored = null;
+    try { stored = localStorage.getItem('binf4008-theme'); } catch (e) {}
+    if (stored === 'dark') {
+      root.setAttribute('data-theme', 'dark');
+      btn.textContent = 'Light mode';
+    }
+    btn.addEventListener('click', function () {
+      var isDark = root.getAttribute('data-theme') === 'dark';
+      if (isDark) {
+        root.removeAttribute('data-theme');
+        btn.textContent = 'Dark mode';
+        try { localStorage.setItem('binf4008-theme', 'light'); } catch (e) {}
+      } else {
+        root.setAttribute('data-theme', 'dark');
+        btn.textContent = 'Light mode';
+        try { localStorage.setItem('binf4008-theme', 'dark'); } catch (e) {}
+      }
+    });
+  })();
+</script>
+</body>
+</html>
